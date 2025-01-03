@@ -1,0 +1,12 @@
+---
+- name: Obtener un path
+  hosts: all
+  
+  tasks:
+    - name: Ejecutar ls
+      command: ls /tmp
+      register: ls_output
+
+    - name: Mostrar la salida de ls
+      debug:
+        msg: "Resultado {{ ls_output.stdout }}"
