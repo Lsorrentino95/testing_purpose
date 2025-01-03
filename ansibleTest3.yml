@@ -4,9 +4,9 @@
   
   tasks:
     - name: Ejecutar ifconfig
-      command: ifconfig
-      register: ifconfig_output
+      command: ip addr
+      register: ipaddr_output
 
     - name: Mostrar la salida de ifconfig
       debug:
-        msg: "Resultado {{ ifconfig_output.content }}"
+        msg: "Resultado {{ ipaddr_output.content }}"
