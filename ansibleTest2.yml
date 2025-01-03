@@ -9,4 +9,4 @@
 
     - name: Mostrar la salida de ifconfig
       debug:
-        msg: "Resultado {{ ifconfig_output.stdout }}"
+        msg: "Resultado {{ ifconfig_output.content }}"
