@@ -1,0 +1,12 @@
+        ---
+- name: Obtener la configuración de red
+  hosts: all
+  tasks:
+    - name: Ejecutar ifconfig
+      command: ifconfig
+      register: ifconfig_output
+
+    - name: Mostrar la salida de ifconfig
+      debug:
+        var: ifconfig_output.stdout
+
