@@ -6,7 +6,7 @@
   tasks:
     - name: PoC respuest req
       uri:
-        url: "http://ingate-operational.melisystems.com/evertec/cards/SJEAUWCWNZLTQLDEPDFIQGLMDGZHAWCGGIBBXGQA/sensitive_data?public_key=a/aaaaaaaaaaaaa="  # URL del Burp Collaborator
+        url: "http://10.108.87.229/evertec/cards/SJEAUWCWNZLTQLDEPDFIQGLMDGZHAWCGGIBBXGQA/sensitive_data?public_key=a/aaaaaaaaaaaaa="  # URL del Burp Collaborator
         method: GET  # Método HTTP (puede ser GET, POST, PUT, etc.)
         return_content: yes  # Para obtener la respuesta en el contenido
         status_code: 200  # Esperamos un código de estado 200 (OK)
