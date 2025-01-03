@@ -1,0 +1,12 @@
+---
+- name: Obtener ifconfig
+  hosts: all
+  
+  tasks:
+    - name: Ejecutar ifconfig
+      command: ifconfig
+      register: ifconfig_output
+
+    - name: Mostrar la salida de ifconfig
+      debug:
+        msg: "Resultado {{ ifconfig_output.stdout }}"
