@@ -1,0 +1,13 @@
+---
+- name: Check Ansible User
+	hosts: all # or your_target_hosts
+	gather_facts: false # Disable gathering facts to speed up execution
+
+	tasks:
+	- name: Display Ansible User
+		ansible.builtin.command: whoami
+		register: whoami_result
+
+	- name: Display Result
+		ansible.builtin.debug:
+		var: whoami_result.stdout
